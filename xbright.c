@@ -27,6 +27,7 @@ static void bright_down(const char*);
 static void bright_set(const char*);
 static int get_current(void);
 static void commit_change(int);
+static void print_current(void);
 static void usage(void);
 
 int
@@ -40,6 +41,7 @@ main(int argc, char **argv)
 
     if (argc > 1) {
         switch(*argv[1]) {
+            case '$': print_current(); break;
             case '+': bright_up(++argv[1]); break;
             case '-': bright_down(++argv[1]); break;
             case '=': bright_set(++argv[1]); break;
@@ -93,6 +95,12 @@ get_current(void)
     fscanf(input, "%d", &value);
     DBG("current value: %d", value);
     return value;
+}
+
+void
+print_current(void)
+{
+  printf("%i", get_current());
 }
 
 void
