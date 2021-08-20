@@ -119,5 +119,5 @@ void
 usage(void)
 {
     printf("%s v%s (works only with 2.6+ kernels).\n", NAME, VERSION);
-    printf("usage: %s [+-=[0-%d]]\n", NAME, MAXVALUE);
+    printf("usage: %s [+-=[0-%d], [$]]\n", NAME, MAXVALUE);
 }
